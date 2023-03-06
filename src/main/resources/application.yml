@@ -1,0 +1,8 @@
+# Tomcat server
+server: 
+    port: 8081
+
+# Logger
+logging.level:
+  web: DEBUG
+  '[com.bptn.feedapp]': DEBUG
