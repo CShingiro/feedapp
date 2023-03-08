@@ -124,15 +124,15 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "{" +
-                " userId='" + getUserId() + "'" +
-                ", firstName='" + getFirstName() + "'" +
-                ", lastName='" + getLastName() + "'" +
-                ", username='" + getUsername() + "'" +
-                ", password='" + getPassword() + "'" +
-                ", phone='" + getPhone() + "'" +
-                ", emailId='" + getEmailId() + "'" +
-                ", emailVerified='" + isEmailVerified() + "'" +
-                ", createdOn='" + getCreatedOn() + "'" +
+                " userId='" + userId + "'" +
+                ", firstName='" + firstName + "'" +
+                ", lastName='" + lastName + "'" +
+                ", username='" + username + "'" +
+                ", password='" + password + "'" +
+                ", phone='" + phone + "'" +
+                ", emailId='" + emailId + "'" +
+                ", emailVerified='" + emailVerified + "'" +
+                ", createdOn='" + createdOn + "'" +
                 "}";
     }
 
