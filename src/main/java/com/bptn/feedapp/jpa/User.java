@@ -179,6 +179,9 @@ public class User implements Serializable {
                 ", emailId='" + emailId + "'" +
                 ", emailVerified='" + emailVerified + "'" +
                 ", createdOn='" + createdOn + "'" +
+                ", profile='" + profile + "'" +
+                ", feeds='" + feeds + "'" +
+                ", feedMetaData='" + feedMetaData + "'" +
                 "}";
     }
 
