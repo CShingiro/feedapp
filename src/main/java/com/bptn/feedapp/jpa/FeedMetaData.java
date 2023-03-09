@@ -96,17 +96,4 @@ public class FeedMetaData implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
-
-    @Override
-    public String toString() {
-        return "{" +
-                " feedMetaDataId='" + feedMetaDataId + "'" +
-                ", comment='" + comment + "'" +
-                ", createdOn='" + createdOn + "'" +
-                ", isLike='" + isLike + "'" +
-                ", feed='" + feed + "'" +
-                ", user='" + user + "'" +
-                "}";
-    }
-
 }
