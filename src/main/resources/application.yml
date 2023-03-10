@@ -60,8 +60,8 @@ spring:
 
 # Email Settings
   mail:
-    username: <add your gmail ID>
-    password: <add your password>
+    username: obsidisocially@gmail.com
+    password: myxohbqyzvbowboy
     host: smtp.gmail.com
     port: 587
     protocol: smtp
