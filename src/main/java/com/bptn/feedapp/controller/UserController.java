@@ -1,6 +1,7 @@
 package com.bptn.feedapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,11 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.springframework.http.HttpStatus.OK;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+
+@CrossOrigin(exposedHeaders = "Authorization")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -77,5 +83,21 @@ public class UserController {
         logger.debug("Verifying Email");
 
         this.userService.verifyEmail();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<User> login(@RequestBody User user) {
+
+        logger.debug("Authenticating, username: {}, password: {}", user.getUsername(), user.getPassword());
+
+        /* Spring Security Authentication. */
+        user = this.userService.authenticate(user);
+
+        /* Generate JWT and HTTP Header */
+        HttpHeaders jwtHeader = this.userService.generateJwtHeader(user.getUsername());
+
+        logger.debug("User Authenticated, username: {}", user.getUsername());
+
+        return new ResponseEntity<>(user, jwtHeader, OK);
     }
 }
