@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bptn.feedapp.jpa.User;
 import com.bptn.feedapp.service.UserService;
+import com.fasterxml.jackson.databind.JsonNode;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -107,5 +108,13 @@ public class UserController {
         logger.debug("Sending Reset Password Email, emailId: {}", emailId);
 
         this.userService.sendResetPasswordEmail(emailId);
+    }
+
+    @PostMapping("/reset")
+    public void passwordReset(@RequestBody JsonNode json) {
+
+        logger.debug("Resetting Password, password: {}", json.get("password").asText());
+
+        this.userService.resetPassword(json.get("password").asText());
     }
 }
