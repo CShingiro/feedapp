@@ -6,24 +6,19 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
 import com.bptn.feedapp.jpa.Profile;
 import com.bptn.feedapp.jpa.User;
 import com.bptn.feedapp.repository.UserRepository;
-
 import com.bptn.feedapp.exception.domain.EmailExistException;
 import com.bptn.feedapp.exception.domain.EmailNotVerifiedException;
 import com.bptn.feedapp.exception.domain.UsernameExistException;
-
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.context.SecurityContextHolder;
 import com.bptn.feedapp.exception.domain.UserNotFoundException;
-
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
