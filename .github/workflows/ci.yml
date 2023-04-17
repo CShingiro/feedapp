@@ -20,7 +20,7 @@ jobs:
       - name: Build and test with Maven
         env:
           SPRING_PROFILES_ACTIVE: test
-        run: mvn -e -B clean test --file pom.xml
+        run: mvn -e -B -X clean test --file pom.xml
 
       - name: Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v1
